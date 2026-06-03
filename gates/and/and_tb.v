@@ -3,7 +3,7 @@ module and_gate_tb;
 reg a,b;
 wire y;
 
-and_gate uut(
+and_st uut(
     .a(a),
     .b(b),
     .y(y)
@@ -12,7 +12,7 @@ and_gate uut(
 initial begin
     $dumpfile("and.vcd");
     $dumpvars(0,and_gate_tb);
-
+    $monitor("t=%0t,a=%b,b=%b,y=%b",$time,a,b,y);
     a=0; b=0;
     #10;
     a=0; b=1;
